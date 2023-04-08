@@ -1,1 +1,1 @@
-# cs-frontend-2
+# Computer Science in Frontend: Chapter 2
