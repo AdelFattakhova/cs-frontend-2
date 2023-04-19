@@ -1,0 +1,66 @@
+canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+button {
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.title {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: rgb(53, 53, 53);
+}
+
+.subtitle {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: rgb(53, 53, 53);
+}
+
+.filters {
+  width: fit-content;
+  margin: 0 auto 25px;
+}
+
+.filters__button {
+  padding: 10px 15px;
+  background-color: rgb(109, 69, 69);
+  border-radius: 5px;
+  color: white;
+  font-size: 21px;
+  transition: .2s background-color;
+}
+
+.filters__button:hover {
+  background-color: rgb(150, 109, 109);
+}
+
+.images__buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 350px;
+}
+
+.images__button {
+  display: inline-block;
+  width: 100px;
+  height: 130px;
+  background-size: cover;
+}
+
+.images__button._city {
+  background: url('./test-images/city.jpeg') no-repeat;
+}
+
+.images__button._exit {
+  background: url('./test-images/exit.jpeg') no-repeat;
+}
+
+.images__button._yard {
+  background: url('./test-images/yard.jpeg') no-repeat;
+}

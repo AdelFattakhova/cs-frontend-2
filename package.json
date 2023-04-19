@@ -8,7 +8,9 @@
   },
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "build": "tsc"
+    "build": "tsc",
+    "watch": "tsc -w",
+    "lint": "eslint . --ext .ts"
   },
   "repository": {
     "type": "git",

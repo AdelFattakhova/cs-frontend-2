@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./index.css">
+  <title>Image Filters</title>
+</head>
+<body>
+  <h1 class="title">IMAGE FILTERS</h1>
+  <div class="filters">
+    <button class="filters__button" id="invert-btn">Invert</button>
+    <button class="filters__button" id="grayscale-btn">B&W</button>
+    <button class="filters__button" id="bluescale-btn">Bluescale</button>
+    <button class="filters__button" id="shadows-btn">Shadows</button>
+  </div>
+  <canvas width="700" height="470"></canvas>
+  <div class="images">
+    <h2 class="subtitle">Try other pictures:</h2>
+    <div class="images__buttons">
+      <button class="images__button _city" data-url='./test-images/city.jpeg'>
+      <button class="images__button _exit" data-url='./test-images/exit.jpeg'>
+      <button class="images__button _yard" data-url='./test-images/yard.jpeg'>
+    </div>
+  </div>
+  <script src="../../../dist/modules/image-filters/image-filters.js"></script>
+</body>
+</html>
