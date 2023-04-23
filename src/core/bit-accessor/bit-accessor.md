@@ -1,9 +1,8 @@
 # Function for basic work with bits
 
 ## createBitAccessor(array: Uint8Array)
-Creates a new instance of [BitAccessor](/src/core/BitAccessor.ts) class for a provided Uint8Array and returns it for further work
+Returns an object for a provided Uint8Array with the following methods:
 
-## BitAccessor
 ### `get(itemIndex: number, bitIndex: number)`
 Returns a bit value (of type number) with a specific index for an item with a given index. Example:
 ```js
