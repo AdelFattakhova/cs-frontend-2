@@ -1,4 +1,4 @@
-import { createBitAccessor } from "./bit-accessor";
+import createBitAccessor from "./BitAccessor";
 
 describe('bit access', () => {
   test('bit accessor should return a certain bit of a certain array item', () => {

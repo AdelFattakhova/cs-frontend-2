@@ -1,6 +1,6 @@
-import { createBitAccessor } from "../../bit-accessor/bit-accessor";
+import createBitAccessor from "../../../core/bit-accessor/BitAccessor";
 
-export default function encode(data: any[], schema: (string|number)[][]) {
+export default function encode(data: any[], schema: (string | number)[][]) {
   const typedArray = new Uint8Array(setBuffer(schema));
   const bitAccessor = createBitAccessor(typedArray);
   let encodedData = 0;
@@ -9,10 +9,10 @@ export default function encode(data: any[], schema: (string|number)[][]) {
   data.forEach((item: number | string | boolean, index) => {
     if (!schema[index]) throw new Error('Data does not match the schema');
 
-    const [ bits, type ] = schema[index];
+    const [bits, type] = schema[index];
 
     if (typeof item === 'string' && type !== 'ascii'
-       || typeof item !== 'string' && typeof item !== type) {
+      || typeof item !== 'string' && typeof item !== type) {
       throw new Error(`The type of the ${index} data item does not match the schema`);
     }
 
@@ -45,7 +45,7 @@ export default function encode(data: any[], schema: (string|number)[][]) {
   return typedArray.buffer;
 }
 
-function setBuffer(schema: (string|number)[][]) {
+function setBuffer(schema: (string | number)[][]) {
   const bitsCount = schema.reduce((bits, item) => {
     return bits += item[0] as number;
   }, 0);
@@ -61,7 +61,7 @@ function encodeSingleItem(item: any, itemIndex: number, bitsForItem: number) {
   if (item.toString(2).length > bitsForItem) {
     throw new Error(`The number of bits required for the ${itemIndex} data item exceeds the one specified in schema`);
   }
-  
+
   const binaryItem = item & (2 ** 32 - 1 >>> (32 - bitsForItem));
   return binaryItem;
 }

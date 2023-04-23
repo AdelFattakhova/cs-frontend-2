@@ -1,6 +1,6 @@
-import { createBitAccessor } from "../../bit-accessor/bit-accessor";
+import createBitAccessor from "../../../core/bit-accessor/BitAccessor";
 
-export default function decode(buffer: ArrayBuffer, schema: (string|number)[][]) {
+export default function decode(buffer: ArrayBuffer, schema: (string | number)[][]) {
   validateData(buffer, schema);
 
   const typedArray = new Uint8Array(buffer);
@@ -53,7 +53,7 @@ function decodeAsciiChars(binaryString: string, bitsForString: number) {
   return decodedString;
 }
 
-function validateData(data: ArrayBuffer, schema: (string|number)[][]) {
+function validateData(data: ArrayBuffer, schema: (string | number)[][]) {
   const bitsCount = schema.reduce((bits, item) => {
     return bits += item[0] as number;
   }, 0);
