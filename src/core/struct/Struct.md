@@ -1,5 +1,5 @@
 # Struct data structure
-Javascript implementation of struct data structure.
+Javascript implementation of struct data structure based on ArrayBuffer.
 
 ## `set(field: string, value: string|number)`
 Sets given value for the specified struct field. Example:
