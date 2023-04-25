@@ -15,6 +15,15 @@ console.log(list.first.next.value);      // 2
 console.log(list.first.next.prev.value); // 1
 ```
 
+## `unshift(value: number | string | [])`
+Adds new node to the beginning of the list with a given value
+
+## `pop()`
+Deletes the first node from the list and returns its value
+
+## `shift()`
+Deletes the last node from the list and returns its value
+
 ## `list is iterable`
 Doubly linked list can be iterated over. Example:
 ```js

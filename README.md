@@ -74,3 +74,61 @@ Hometask:
    ```
 
 [Solution for 3](./src/core/struct/)
+
+### **Lesson 4.**
+Hometask:
+1. Implement queue based on doubly linked list:
+
+    ```js
+    const queue = Queue();
+    
+    queue.push(10);
+    queue.push(11);
+    queue.push(12);
+    
+    console.log(queue.head);  // 10
+    
+    console.log(queue.pop()); // 10
+    
+    console.log(queue.head);  // 11
+    
+    console.log(queue.pop()); // 11
+    console.log(queue.pop()); // 12
+    console.log(queue.pop()); // Exception
+    ```
+2. Implement double-ended queue (deque)
+
+   ```js
+   const dequeue = Queue();
+   
+   dequeue.push(10);
+   dequeue.unshift(11);
+   dequeue.push(12);
+
+   console.log(dequeue.pop());   // 11
+   console.log(dequeue.shift()); // 12
+   console.log(dequeue.pop());   // 10
+   console.log(dequeue.pop());   // Exception
+   ```
+
+[Solution for 1, 2](./src/core/queue/)
+
+3. Implement stack based on typed array of a given length
+
+   ```js
+   const stack = Stack(Int32Array, 10);
+   
+   stack.push(10);
+   stack.push(11);
+   stack.push(12);
+   
+   console.log(stack.head);  // 12
+   
+   console.log(stack.pop()); // 12
+   
+   console.log(stack.head);  // 11
+   
+   console.log(stack.pop()); // 11
+   console.log(stack.pop()); // 10
+   console.log(stack.pop()); // Exception
+   ```
