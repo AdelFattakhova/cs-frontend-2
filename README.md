@@ -1,13 +1,13 @@
 # Computer Science in Frontend: Chapter 2
 
-### **Lesson 1.**
+## **Lesson 1**
 Hometask:
 1. Create a function that takes a Uint8Array and allows you to access a bit of a specific element
 2. Extend the function from the previous task with the ability to change the value of a specific bit
 
 [Solution](./src/core/bit-accessor)
 
-### **Lesson 2.**
+## **Lesson 2**
 Hometask:
 1. Create filters for images in Canvas ([Solution](./src/modules/image-filters))
 2. Create a function for data encoding according to schema. If the data doesn't match the schema, throw an exception with a comment. The result should be ArrayBuffer.
@@ -25,7 +25,7 @@ Hometask:
 
 [Solution for 2, 3](./src/utils/data-encoding)
 
-### **Lesson 3.**
+## **Lesson 3**
 Hometask:
 1. Implement doubly linked list:
     ```js
@@ -75,7 +75,7 @@ Hometask:
 
 [Solution for 3](./src/core/struct/)
 
-### **Lesson 4.**
+## **Lesson 4**
 Hometask:
 1. Implement queue based on doubly linked list:
 
@@ -132,3 +132,5 @@ Hometask:
    console.log(stack.pop()); // 10
    console.log(stack.pop()); // Exception
    ```
+
+[Solution](./src/core/stack/)
