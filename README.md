@@ -1,13 +1,13 @@
 # Computer Science in Frontend: Chapter 2
 
-### **Lesson 1.**
+## **Lesson 1**
 Hometask:
 1. Create a function that takes a Uint8Array and allows you to access a bit of a specific element
 2. Extend the function from the previous task with the ability to change the value of a specific bit
 
 [Solution](./src/core/bit-accessor)
 
-### **Lesson 2.**
+## **Lesson 2**
 Hometask:
 1. Create filters for images in Canvas ([Solution](./src/modules/image-filters))
 2. Create a function for data encoding according to schema. If the data doesn't match the schema, throw an exception with a comment. The result should be ArrayBuffer.
@@ -25,7 +25,7 @@ Hometask:
 
 [Solution for 2, 3](./src/utils/data-encoding)
 
-### **Lesson 3.**
+## **Lesson 3**
 Hometask:
 1. Implement doubly linked list:
     ```js
@@ -74,3 +74,63 @@ Hometask:
    ```
 
 [Solution for 3](./src/core/struct/)
+
+## **Lesson 4**
+Hometask:
+1. Implement queue based on doubly linked list:
+
+    ```js
+    const queue = Queue();
+    
+    queue.push(10);
+    queue.push(11);
+    queue.push(12);
+    
+    console.log(queue.head);  // 10
+    
+    console.log(queue.pop()); // 10
+    
+    console.log(queue.head);  // 11
+    
+    console.log(queue.pop()); // 11
+    console.log(queue.pop()); // 12
+    console.log(queue.pop()); // Exception
+    ```
+2. Implement double-ended queue (deque)
+
+   ```js
+   const dequeue = Queue();
+   
+   dequeue.push(10);
+   dequeue.unshift(11);
+   dequeue.push(12);
+
+   console.log(dequeue.pop());   // 11
+   console.log(dequeue.shift()); // 12
+   console.log(dequeue.pop());   // 10
+   console.log(dequeue.pop());   // Exception
+   ```
+
+[Solution for 1, 2](./src/core/queue/)
+
+3. Implement stack based on typed array of a given length
+
+   ```js
+   const stack = Stack(Int32Array, 10);
+   
+   stack.push(10);
+   stack.push(11);
+   stack.push(12);
+   
+   console.log(stack.head);  // 12
+   
+   console.log(stack.pop()); // 12
+   
+   console.log(stack.head);  // 11
+   
+   console.log(stack.pop()); // 11
+   console.log(stack.pop()); // 10
+   console.log(stack.pop()); // Exception
+   ```
+
+[Solution](./src/core/stack/)
