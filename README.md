@@ -23,7 +23,7 @@ Hometask:
     ```
 3. Create a function for parsing the ArrayBuffer from the previous task according to the same schema. If the data doesn't match the schema, throw an exception with a comment.
 
-[Solution for 2, 3](./src/utils/data-encoding)
+[Solution for 2, 3](./src/modules/data-encoding)
 
 ## **Lesson 3**
 Hometask:
@@ -134,3 +134,27 @@ Hometask:
    ```
 
 [Solution](./src/core/stack/)
+
+## **Lesson 5**
+Hometask:
+1. Compress deep object. Create function that would compress deep object into flat one. The task must be solved in 2 ways at minimum: using recursion and stack. You can use queue as well. [Solution](./src/modules/flatten-object/)
+
+   ```js
+   const obj = {
+     a: {
+       b: [1, 2],
+       '': {c: 2}
+     }
+   };
+   
+   /* {'a.b.0': 1, 'a.b.1': 2, 'a..c': 2} */
+   console.log(collapse(obj));
+   ```
+
+2. Bracket groups validation. Create function that would accept string and return true in case each bracket character (`{`, `[` and `(`) has it's closing pair in the given string and the order of these pairs is correct. [Solution](./src/modules/validate-brackets/)
+
+   ```js
+   console.log(isValid('(hello{world} and [me])'));  // true
+   console.log(isValid('(hello{world)} and [me])')); // false
+   console.log(isValid(')'));                        // false
+   ```
