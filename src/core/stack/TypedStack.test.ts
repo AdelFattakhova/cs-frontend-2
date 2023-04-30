@@ -1,8 +1,8 @@
-import Stack from './Stack';
+import TypedStack from './TypedStack';
 
-describe('Stack data structure', () => {
+describe('TypedStack data structure', () => {
   test('should create empty stack', () => {
-    const stack = new Stack(Int16Array, 5);
+    const stack = new TypedStack(Int16Array, 5);
 
     expect(stack.maxSize).toBe(5);
     expect(stack.array.length).toBe(5);
@@ -11,13 +11,13 @@ describe('Stack data structure', () => {
   });
 
   test('should check for empty stack', () => {
-    const stack = new Stack(Uint8Array, 5);
+    const stack = new TypedStack(Uint8Array, 5);
 
     expect(stack.isEmpty()).toBeTruthy;
   });
 
   test('should check for full stack', () => {
-    const stack = new Stack(Int32Array, 3);
+    const stack = new TypedStack(Int32Array, 3);
 
     stack.push(10);
     stack.push(11);
@@ -27,7 +27,7 @@ describe('Stack data structure', () => {
   });
 
   test('should correctly add new items to stack', () => {
-    const stack = new Stack(Int8Array, 3);
+    const stack = new TypedStack(Int8Array, 3);
 
     stack.push(10);
     stack.push(-11);
@@ -37,7 +37,7 @@ describe('Stack data structure', () => {
   });
 
   test('should not add new items to a full stack', () => {
-    const stack = new Stack(Int16Array, 3);
+    const stack = new TypedStack(Int16Array, 3);
 
     stack.push(10);
     stack.push(11);
@@ -47,7 +47,7 @@ describe('Stack data structure', () => {
   });
 
   test('should correctly remove items from stack of numbers', () => {
-    const stack = new Stack(Int16Array, 3);
+    const stack = new TypedStack(Int16Array, 3);
 
     stack.push(10);
     stack.push(11);
@@ -57,7 +57,7 @@ describe('Stack data structure', () => {
   });
 
   test('should correctly remove items from stack of strings', () => {
-    const stack = new Stack(Int16Array, 3);
+    const stack = new TypedStack(Int16Array, 3);
 
     stack.push('a');
     stack.push('g');
@@ -67,7 +67,7 @@ describe('Stack data structure', () => {
   });
 
   test('should throw exception on removing items from an empty stack', () => {
-    const stack = new Stack(Int16Array, 3);
+    const stack = new TypedStack(Int16Array, 3);
 
     expect(() => stack.pop()).toThrow('Stack is empty');
   });
