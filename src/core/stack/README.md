@@ -1,5 +1,5 @@
-# Stack data structure
-Implementation of stack based on typed array. Can store either numbers or strings
+# Stack data structures
+Implementation of simple stack and stack based on typed array (TypedStack). TypedArray can store either numbers or strings
 
 ## `head`
 Returns a value from the top of the stack
