@@ -158,3 +158,44 @@ Hometask:
    console.log(isValid('(hello{world)} and [me])')); // false
    console.log(isValid(')'));                        // false
    ```
+
+## **Lesson 6**
+1. Implement vector structure based on typed array. Vector must support deque's interface like native JavaScript arrays. [Solution](./src/core/vector/)
+
+   ```js
+   const uint8Vector = new Vector(Uint8Array, {capacity: 100});
+
+   uint8Vector.push(100);    // 1
+   uint8Vector.push(20, 10); // 3
+
+   uint8Vector.pop();        // 10
+   uint8Vector.shift();      // 100
+
+   uint8Vector.unshift(1);          // 2
+   console.log(uint8Vector.length); // 2
+   ```
+
+2. Implement class to describe 3-dimensional matrix. [Solution](./src/core/matrix-3d/)
+
+   ```js
+   const matrix = new Matrix3D({x: 10, y: 10, z: 10});
+
+   matrix.set({x: 1, y: 3, z: 2}, 10);
+   matrix.get({x: 1, y: 3, z: 2});
+   ```
+
+3. Implement class to create hash maps. Both primitive types and objects can be used as keys. Any hash function algorithm can be used. Collisions may be resolved using either chains method, or open addressing. Hash map must be expandable. [Solution](./src/core/hash-map/)
+
+   ```js
+   // Setting capacity of the internal buffer
+   const map = new HashMap(120);
+
+   map.set('foo', 1);
+   map.set(42, 10);
+   map.set(document, 100);
+   
+   console.log(map.get(42));          // 10
+   console.log(map.has(document));    // true
+   console.log(map.delete(document)); // 10
+   console.log(map.has(document));    // false
+   ```
