@@ -24,11 +24,13 @@ function addImagetoCanvas() {
   });
 }
 
+// TODO: refactor all cycles to use 2d-matrix
+
 function invert() {
   const imageData = ctx?.getImageData(0, 0, imageWidth, imageHeight);
   if (!imageData) return;
 
-  for (let i = 0; i < imageData.data.length; i += 4){
+  for (let i = 0; i < imageData.data.length; i += 4) {
     imageData.data[i] ^= 255;
     imageData.data[i + 1] ^= 255;
     imageData.data[i + 2] ^= 255;

@@ -1,5 +1,7 @@
 import createBitAccessor from "../../../core/bit-accessor/BitAccessor";
 
+// TODO: refactor to encode with 32 bits per item, not for the whole shema
+
 export default function encode(data: any[], schema: (string | number)[][]) {
   const typedArray = new Uint8Array(setBuffer(schema));
   const bitAccessor = createBitAccessor(typedArray);
