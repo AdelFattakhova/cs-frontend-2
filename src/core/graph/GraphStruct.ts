@@ -258,6 +258,36 @@ export default class GraphStruct {
     return -1;
   }
 
+  /* Visualization */
+
+  visualize() {
+    var svgn = "http://www.w3.org/2000/svg";
+    const graphContainer = document.querySelector('.graph');
+    const svgContainer = document.createElementNS(svgn, 'svg');
+
+    for (let i = 0; i < this.vertexCount; i++) {
+      const cx = i * 20;
+      const cy = i * 40;
+
+      const circle = document.createElementNS(svgn, 'circle');
+      circle.setAttribute('cx', `${cx}`);
+      circle.setAttribute('cy', `${cy}`);
+      circle.setAttribute('r', '20');
+      circle.setAttribute('style', 'fill: none; stroke: blue; stroke-width: 2px;');
+
+      const text = document.createElementNS(svgn, 'text');
+      text.setAttribute('x', `${cx}`);
+      text.setAttribute('y', `${cy}`);
+      text.innerHTML = this.vertexList[i].label;
+      circle.append(text);
+
+      svgContainer.append(circle);
+    }
+
+    graphContainer?.append(svgContainer);
+  }
+}
+
 // TODO: move all commented out lines to test cases
 
 // const graphM = new GraphMatrix({
