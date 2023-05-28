@@ -199,3 +199,26 @@ Hometask:
    console.log(map.delete(document)); // 10
    console.log(map.has(document));    // false
    ```
+
+## **Lesson 7**
+1. Create and visualize graph via SVG
+
+Implement creating graph using adjacement matrix, as well as adjacement struct.
+Create several examples for oriented and non-oriented graphs. Visualize graphs via SVG markdown as image.
+(*visualization is not done yet*)
+
+2. Create class for convenient work with graphs
+
+API should provide functionality to check relations between vertices. For example, if A is a parent for B and so on. API should allow describing oriented, non-oriented and adjacent graphs, as well as adding weight for edges.
+
+- *extra task:
+
+  Implement iterators which bypass the graph depth and breadth first, as well as a topological sort method.
+
+3. Implement transitive closure for created graph
+
+Implement a function or constructor that would create transitive closure based on the created graph
+
+[Solution for adjacement matrix](./src/core/graph/GraphMatrix.ts)
+
+[Solution for adjacement struct](./src/core/graph/GraphStruct.ts)

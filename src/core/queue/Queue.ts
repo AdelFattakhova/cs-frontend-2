@@ -2,14 +2,14 @@ import linkedList from '../doubly-linked-list/DoublyLinkedList';
 
 export default class Queue {
   list;
-  head: string | number | [] | null = null;
-  tail: string | number | [] | null = null;
+  head: string | number | [] | object | null = null;
+  tail: string | number | [] | object | null = null;
 
   constructor() {
     this.list = new linkedList;
   }
 
-  push(value: number | string | []) {
+  push(value: number | string | [] | object) {
     this.list.push(value);
 
     if (this.list.last) {
@@ -19,7 +19,7 @@ export default class Queue {
     }
   }
 
-  unshift(value: number | string | []) {
+  unshift(value: number | string | [] | object) {
     this.list.unshift(value);
 
     if (this.list.first) {
