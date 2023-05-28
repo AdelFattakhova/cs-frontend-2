@@ -1,5 +1,5 @@
 type Node = {
-  value: number | string | [],
+  value: number | string | [] | object,
   next: Node,
   prev: Node,
 } | null;
@@ -8,7 +8,7 @@ export default class DoublyLinkedList {
   first: Node = null;
   last: Node = null;
 
-  push(value: number | string | []) {
+  push(value: number | string | [] | object) {
     const newNode: Node = {
       value,
       next: null,
@@ -25,7 +25,7 @@ export default class DoublyLinkedList {
     }
   }
 
-  unshift(value: number | string | []) {
+  unshift(value: number | string | [] | object) {
     const newNode: Node = {
       value,
       next: this.first || null,

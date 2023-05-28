@@ -1,7 +1,7 @@
 export default class Stack {
   array: any;
   headIndex = -1;
-  head: number | string | [any, any] | null = null;
+  head: number | string | object | [any, any] | null = null;
   maxSize: number;
 
   constructor(stackSize: number) {
@@ -21,7 +21,7 @@ export default class Stack {
     return this.head;
   }
 
-  push(value: number | string | [any, any]) {
+  push(value: number | string | object | [any, any]) {
     if (this.isFull()) {
       throw new Error('Stack is full');
     }
