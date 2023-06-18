@@ -222,3 +222,70 @@ Implement a function or constructor that would create transitive closure based o
 [Solution for adjacement matrix](./src/core/graph/GraphMatrix.ts)
 
 [Solution for adjacement struct](./src/core/graph/GraphStruct.ts)
+
+## **Lesson 15, 16**
+
+1. Create an iterator for random numbers generation according to given parameters [Solution](./src/helpers/iterators/random.ts)
+
+```js
+const randomInt = random(0, 100);
+
+console.log(randomInt.next());
+console.log(randomInt.next());
+console.log(randomInt.next());
+console.log(randomInt.next());
+```
+
+2. Create `take` function which accepts any Iterable object and returns an iterator over the given number of its elements [Solution](./src/helpers/iterators/take.ts)
+
+```js
+const randomInt = random(0, 100);
+
+console.log([...take(randomInt, 15)]);
+```
+
+3. Create `filter` function which accepts any Iterable object and a predicate function. It should return an iterator over those elements, which satisfies the predicate [Solution](./src/helpers/iterators/filter.ts)
+
+```js
+const randomInt = random(0, 100);
+
+console.log([...take(filter(randomInt, (el) => el > 30), 15)]);
+```
+
+4. Create `enumerate` function which accepts any Iterable object and returns an iterator over the pairs (iteration number, element) [Solution](./src/helpers/iterators/enumerate.ts)
+
+```js
+const randomInt = random(0, 100);
+
+console.log([...take(enumerate(randomInt), 3)]); // [[0, ...], [1, ...], [2, ...]]
+```
+
+5. Create `Range` class which allows to create ranges of numbers or characters, as well as iterate over range's elements in both normal and reverse order [Solution](./src/helpers/iterators/range.ts)
+   
+```js
+const symbolRange = new Range('a', 'f');
+
+console.log(Array.from(symbolRange)); // ['a', 'b', 'c', 'd', 'e', 'f']
+
+const numberRange = new Range(-5, 1);
+
+console.log(Array.from(numberRange.reverse())); // [1, 0, -1, -2, -3, -4, -5]
+```
+
+6. Create `seq` function which accepts a set of Iterable objects and returns an iterator over their elements [Solution](./src/helpers/iterators/seq.ts)
+
+```js
+console.log(...seq([1, 2], new Set([3, 4]), 'bla')); // 1, 2, 3, 4, 'b', 'l', 'a'
+```
+
+7. Create `zip` function which accepts a set of Iterable objects and returns an iterator over the tuples of their elements [Solution](./src/helpers/iterators/zip.ts)
+
+```js
+console.log(...zip([1, 2], new Set([3, 4]), 'bl')); // [[1, 3, b], [2, 4, 'l']]
+```
+
+8. Create function which accepts any Iterable object and Iterable containing functions and returns an iterator where functions from the second Iterable are sequentially applied to each element of the first one [Solution](./src/helpers/iterators/mapSeq.ts)
+
+```js
+console.log(...mapSeq([1, 2, 3], [(el) => el * 2, (el) => el - 1])); // [1, 3, 5]
+```
